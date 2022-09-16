@@ -1,0 +1,16 @@
+
+@use 'src/styles/styles';
+
+.app {
+    background-color: #fff;
+    height: 100%;
+    width: 300px;
+    margin: 10px auto;
+  
+  }
+
+  body {
+    font-family: styles.$font;
+    background-color: styles.$color-alt;
+    color: styles.$color;
+  }
