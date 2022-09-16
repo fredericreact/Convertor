@@ -22,6 +22,6 @@
 
     &:hover {
         background-color: styles.$color-alt;
-        transition: 0.2s;
+        transition: styles.$transition-fast;
     }
 }

@@ -10,7 +10,7 @@
 
 
 
-# State
+# State using Class (Before)
 
     class App extends React.Component {
 
@@ -44,5 +44,12 @@
 >avant, pour gerer les states, on devait le faire dans une classe. on pouvait pas le faire dans une fonction 
 
 
+# Declarative Programming vs Imperative Programming
 
+    Declarative Programming : Mon app depend d'un state et va s'ajuster selon un state
+<br>
+    Imperative Programming : Je dis a mon app quoi faire directement
 
+# Alternative a if
+
+    a && b

@@ -5,6 +5,7 @@ import React, {useState} from 'react';
 import Header from '../Header';
 import Currencies from '../Currencies';
 import Amount from '../Amount';
+import Toggler from '../Toggler';
 import './styles.scss'
 
 import data from '../../data/currencies';
@@ -14,7 +15,7 @@ const App = () => {
 
   const [isExpanded, setExpanded] =useState(true);
 
-  function  expand (){
+  function expand (){
     setExpanded(!isExpanded);
      
     }
@@ -22,7 +23,7 @@ const App = () => {
 return(
   <div className="app">
      <Header baseAmount={1}/>
-     <button type="button" onClick={expand}> Toggle </button>
+     <Toggler opened={isExpanded} onButtonClick={expand}/>
     {
     isExpanded && <Currencies currencies={data}/>
   }
