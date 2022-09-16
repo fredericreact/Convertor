@@ -1,0 +1,27 @@
+@use 'src/styles/styles';
+
+
+.currencies {
+    height:250px;
+    overflow-y: auto;
+
+    &-title {
+        padding:styles.$gutter;
+        margin-top:styles.$gutter;
+        font-weight: bold;
+    }
+}
+
+.currency {
+    padding:styles.$gutter;
+    border-top: 1px solid styles.$color-alt;
+    font-weight: 500;
+    cursor : pointer;
+
+    transition: 1s;
+
+    &:hover {
+        background-color: styles.$color-alt;
+        transition: 0.2s;
+    }
+}
