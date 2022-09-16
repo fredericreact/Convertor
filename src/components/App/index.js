@@ -10,7 +10,7 @@ import './styles.scss'
 // == Composant
 const App = () => (
   <div className="app">
-     <Header />
+     <Header baseAmount={1}/>
     <Currencies />
     <Amount />
     
