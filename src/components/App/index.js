@@ -18,9 +18,11 @@ const App = () => {
     {
     opened:true,
   baseAmount:3.28,
-  currency:'USD',
+  currency:'United States Dollar',
   });
 
+
+const {opened,baseAmount,currency} = isExpanded
 
   const expand = () =>  {
     setExpanded({
@@ -30,9 +32,8 @@ const App = () => {
     }
     
   const makeConversion = () => {
-
-  
-    const result = 1.09 * isExpanded.baseAmount ;
+    const selectedCurrency = data.find((deviseObject) => deviseObject.name===currency);  
+    const result = selectedCurrency.rate * baseAmount ;
     const rounded = Math.round(result*100)/100;
     return rounded;
 
@@ -40,13 +41,14 @@ const App = () => {
 
 
 return (
+  
   <div className="app">
-    <Header baseAmount={isExpanded.baseAmount}/>
-    <Toggler opened={isExpanded.opened} onButtonClick={expand}/>
+    <Header baseAmount={baseAmount}/>
+    <Toggler opened={opened} onButtonClick={expand}/>
     {
-    isExpanded.opened && <Currencies currencies={data}/>
+    opened && <Currencies currencies={data}/>
     }
-    <Amount amount={makeConversion()} currency="USD"/>
+    <Amount amount={makeConversion()} currency={currency}/>
   </div>
   );
 };
