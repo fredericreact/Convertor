@@ -43,11 +43,16 @@
 
 >avant, pour gerer les states, on devait le faire dans une classe. on pouvait pas le faire dans une fonction 
 
+# State 
+
+> Je mets mon state dans App pou qu'il soit disponible dans tous les composants. Si je mets ls tate dans un composant, il ne sera disponible quand dans ce composant et ses enfants, mais pas dans les autres composants.
+Et je sais que tout est gere dans App.
 
 # Declarative Programming vs Imperative Programming
 
     Declarative Programming : Mon app depend d'un state et va s'ajuster selon un state
 <br>
+
     Imperative Programming : Je dis a mon app quoi faire directement
 
 # Alternative a if
