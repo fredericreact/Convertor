@@ -39,17 +39,24 @@ const {opened,baseAmount,currency} = isExpanded
 
   }
 
-const setCurrency = (newCurrencyName) => {
-  setExpanded({
-    ...isExpanded,
-      currency: newCurrencyName
-  })
-}  
+  const setCurrency = (newCurrencyName) => {
+    setExpanded({
+      ...isExpanded,
+        currency: newCurrencyName
+    })
+  }  
+
+  const handleInputChange = (newBaseAmount) => {
+    setExpanded({
+      ...isExpanded,
+        baseAmount: newBaseAmount
+    })
+  }  
 
 return (
   
   <div className="app">
-    <Header baseAmount={baseAmount}/>
+    <Header baseAmount={baseAmount} onInputChange={handleInputChange}/>
     <Toggler opened={opened} onButtonClick={expand}/>
     {
     opened && <Currencies onCurrencyClick={setCurrency} currencies={data}/>

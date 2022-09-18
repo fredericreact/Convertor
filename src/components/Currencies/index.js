@@ -15,19 +15,11 @@ return(
 {
   currencies.map(currencyObject=>(
   <li 
-  
-  onClick={()=>{
-
-    onCurrencyClick(currencyObject.name);
-;  }}
-  
+  onClick={ () => { onCurrencyClick(currencyObject.name);}}
   key={currencyObject.name} 
-  
-  className='currency'>
-  
-  {currencyObject.name}
-  
-  </li>
+  className='currency'
+  >
+  {currencyObject.name}</li>
   )
   )
   
