@@ -4,11 +4,21 @@ import PropTypes from 'prop-types';
 
 
 const Currencies = (props) => {
-  const {currencies, onCurrencyClick} = props;
+  const {currencies, onCurrencyClick, search, onSearchChange} = props;
 return(
   <div className='currencies'>
   <div className='currencies-title'>
-    Currencies
+    
+    <input 
+    type="text" 
+    className='currencies-search'
+    value={search}
+    onChange={ (evt) => {
+      const cequiaetetape = evt.target.value;
+      onSearchChange(cequiaetetape);
+    }}
+    />
+
     </div>
     <ul className='currencies-list'>
 
@@ -38,6 +48,8 @@ Currencies.propTypes = {
     }),
   ).isRequired,
   onCurrencyClick:PropTypes.func.isRequired,  
+  onCurrencyClick:PropTypes.string.isRequired,  
+  onSearchChange: PropTypes.func.isRequired,
 };
 
 export default Currencies;

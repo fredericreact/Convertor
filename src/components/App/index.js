@@ -16,13 +16,14 @@ const App = () => {
 
   const [isExpanded, setExpanded] =useState(
     {
+      search:'',
     opened:true,
   baseAmount:3.28,
   currency:'United States Dollar',
   });
 
 
-const {opened,baseAmount,currency} = isExpanded
+const {opened,baseAmount,currency, search} = isExpanded
 
   const expand = () =>  {
     setExpanded({
@@ -53,13 +54,20 @@ const {opened,baseAmount,currency} = isExpanded
     })
   }  
 
+  const handleSearchChange = (cequiaetetape) => {
+    setExpanded({
+      ...isExpanded,
+        search: cequiaetetape
+    })
+  }
+
 return (
   
   <div className="app">
     <Header baseAmount={baseAmount} onInputChange={handleInputChange}/>
     <Toggler opened={opened} onButtonClick={expand}/>
     {
-    opened && <Currencies onCurrencyClick={setCurrency} currencies={data}/>
+    opened && <Currencies onSearchChange={handleSearchChange} search={search} onCurrencyClick={setCurrency} currencies={data}/>
     }
     <Amount amount={makeConversion()} currency={currency}/>
   </div>
