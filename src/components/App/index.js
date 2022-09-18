@@ -61,13 +61,29 @@ const {opened,baseAmount,currency, search} = isExpanded
     })
   }
 
+  const getCurrenciesList =() => {
+    console.log(search);
+    if(search.length >0){
+
+    
+    return data.filter((deviseObject)=>{
+      const cequiestcherche = search.toLowerCase();
+      const nomDeLaDevise = deviseObject.name.toLowerCase();
+      return nomDeLaDevise.includes(cequiestcherche);
+    });
+  }
+
+    return data;
+
+  }
+
 return (
   
   <div className="app">
     <Header baseAmount={baseAmount} onInputChange={handleInputChange}/>
     <Toggler opened={opened} onButtonClick={expand}/>
     {
-    opened && <Currencies onSearchChange={handleSearchChange} search={search} onCurrencyClick={setCurrency} currencies={data}/>
+    opened && <Currencies onSearchChange={handleSearchChange} search={search} onCurrencyClick={setCurrency} currencies={getCurrenciesList()}/>
     }
     <Amount amount={makeConversion()} currency={currency}/>
   </div>

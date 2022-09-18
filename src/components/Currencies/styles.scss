@@ -25,3 +25,15 @@
         transition: styles.$transition-fast;
     }
 }
+
+.currencies-search {
+    padding: styles.$gutter;
+    margin-top: styles.$gutter;
+    width: 100%;
+    border: none;
+    color: styles.$color;
+    font: inherit;
+    &::placeholder {
+      color: styles.$color-alt;
+    }
+  }

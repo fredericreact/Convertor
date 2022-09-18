@@ -11,6 +11,7 @@ return(
     
     <input 
     type="text" 
+    placeholder="filter"
     className='currencies-search'
     value={search}
     onChange={ (evt) => {
