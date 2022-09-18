@@ -39,6 +39,12 @@ const {opened,baseAmount,currency} = isExpanded
 
   }
 
+const setCurrency = (newCurrencyName) => {
+  setExpanded({
+    ...isExpanded,
+      currency: newCurrencyName
+  })
+}  
 
 return (
   
@@ -46,7 +52,7 @@ return (
     <Header baseAmount={baseAmount}/>
     <Toggler opened={opened} onButtonClick={expand}/>
     {
-    opened && <Currencies currencies={data}/>
+    opened && <Currencies onCurrencyClick={setCurrency} currencies={data}/>
     }
     <Amount amount={makeConversion()} currency={currency}/>
   </div>

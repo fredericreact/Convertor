@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 
 const Currencies = (props) => {
-  const {currencies} = props;
+  const {currencies, onCurrencyClick} = props;
 return(
   <div className='currencies'>
   <div className='currencies-title'>
@@ -13,10 +13,22 @@ return(
     <ul className='currencies-list'>
 
 {
-  currencies.map(currencyObject=>
-  <li key={currencyObject.name} className='currency'>{currencyObject.name}</li>
+  currencies.map(currencyObject=>(
+  <li 
+  
+  onClick={()=>{
 
-
+    onCurrencyClick(currencyObject.name);
+;  }}
+  
+  key={currencyObject.name} 
+  
+  className='currency'>
+  
+  {currencyObject.name}
+  
+  </li>
+  )
   )
   
 }
@@ -33,7 +45,7 @@ Currencies.propTypes = {
       name:PropTypes.string.isRequired,
     }),
   ).isRequired,
-
+  onCurrencyClick:PropTypes.func.isRequired,  
 };
 
 export default Currencies;
